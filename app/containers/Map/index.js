@@ -86,6 +86,8 @@ export class Map extends React.Component {
     focusDiv.className = 'map-focus'
     node.appendChild(focusDiv)
 
+    console.log(this.props);
+
     const center = (this.props.data && this.props.data.center) || this.props.defaults.center
     const zoom = (this.props.data && this.props.data.zoom) || this.props.defaults.zoom
 
@@ -102,8 +104,8 @@ export class Map extends React.Component {
     map.attributionControl.setPosition('topright')
     map.attributionControl.setPrefix('')
 
-    L.tileLayer(this.props.defaults.tileUrl, {
-      attribution: this.props.defaults.attribution
+    L.tileLayer(this.props.defaults.tileUrl || this.props.defaults.mapbox.tileUrl, {
+      attribution: this.props.defaults.attribution || this.props.defaults.mapbox.attribution
     }).addTo(map)
 
     if (this.props.mode === 'crosshair') {

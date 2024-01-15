@@ -1,2 +1,105 @@
 api:
   url: http://brick-by-brick.buildingshistory.co.uk/
+
+longTitleLength: 120
+
+cssVariables:
+  padding: 10px
+  headerHeight: 56px
+  mobileWidth: 900px
+
+  colors:
+    red: rgb(208, 52, 58)
+    green: rgb(100, 128, 3)
+    blue: rgb(2, 104, 202)
+    gray: rgb(110, 110, 110)
+
+  outlineColor: '#d0343a'
+  outlineOpacity: 0.5
+  outlineWidth: 3px
+
+  imageBackground: rgb(50, 50, 50)
+
+  pageBackground: '#fefefe'
+  pageColor: '#333'
+
+  headerBackground: '#111'
+  headerColor: white
+
+collections:
+  - uuid: 827e583c-2736-4720-8695-b76f4622ebc7
+    title: Buildings
+    url: https://buildingshistory.co.uk/galleries/buildings
+    include: true
+
+  - uuid: 985e3f6d-09f1-4a0f-8cbf-060514ecb860
+    title: Heritage Trail Farnham
+    url: https://buildingshistory.co.uk/galleries/heritage-trail-farnham
+    include: true
+
+  - uuid: eabce27f-9e77-4572-82a9-d5275b17f3f6
+    title: Outdoors
+    url: https://buildingshistory.co.uk/galleries/outdoors
+    include: true
+
+animals:
+  - uuid: 510d47da-9f1f-a3d9-e040-e00a18064a99
+    name: Chinese owl
+
+  - uuid: 510d47da-9ed9-a3d9-e040-e00a18064a99
+    name: Wrinkle-lipped free-tailed bat
+
+  - uuid: 510d47da-9eda-a3d9-e040-e00a18064a99
+    name: Asiatic wildcat
+
+  - uuid: 510d47da-9f5a-a3d9-e040-e00a18064a99
+    name: Black-necked stork
+
+  - uuid: 510d47da-b502-a3d9-e040-e00a18064a99
+    name: Tawny eagle
+
+  - uuid: 510d47da-9f4a-a3d9-e040-e00a18064a99
+    name: Bengal horned pheasant
+
+  - uuid: 510d47da-9f7d-a3d9-e040-e00a18064a99
+    name: Armed balistes
+
+  - uuid: 510d47da-9f72-a3d9-e040-e00a18064a99
+    name: Doubtful toad
+
+  - uuid: 510d47da-b4f3-a3d9-e040-e00a18064a99
+    name: Indian crested porcupine
+
+  - uuid: 510d47da-c2ed-a3d9-e040-e00a18064a99
+    name: Spinose land terrapin
+
+  - uuid: 510d47da-9f12-a3d9-e040-e00a18064a99
+    name: Collared hedgehog
+
+tasks:
+  defaultOrganizationId: nypl
+  taskId: geotag-photo
+
+steps:
+  - location
+  - bearingintroduction
+  - bearing
+  - thanks
+
+defaults:
+  map:
+    mapbox:
+      username: nypllabs
+      styleId: cj2gmix25005o2rpapartqm07
+      accessToken: pk.eyJ1IjoibnlwbGxhYnMiLCJhIjoiSFVmbFM0YyJ9.sl0CRaO71he1XMf_362FZQ
+      tileUrl: 'https://api.mapbox.com/styles/v1/nypllabs/cj2gmix25005o2rpapartqm07/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibnlwbGxhYnMiLCJhIjoiSFVmbFM0YyJ9.sl0CRaO71he1XMf_362FZQ'
+      attribution: '&copy; Mapbox, &copy; OpenStreetMap'
+
+    # scrollWheelZoom: false
+    scrollWheelZoom: center
+    doubleClickZoom: center
+    center: [51.21498, -0.79892]
+    zoom: 13
+    minZoom: 6
+    maxZoom: 23
+    keyboardPanDelta: 40

@@ -86,8 +86,6 @@ export class Map extends React.Component {
     focusDiv.className = 'map-focus'
     node.appendChild(focusDiv)
 
-    console.log(this.props);
-
     const center = (this.props.data && this.props.data.center) || this.props.defaults.center
     const zoom = (this.props.data && this.props.data.zoom) || this.props.defaults.zoom
 

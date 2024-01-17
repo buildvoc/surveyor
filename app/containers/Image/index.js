@@ -72,7 +72,7 @@ export class Image extends React.Component {
     }
 
     const imageStyle = {
-      backgroundImage: `url(${src})`,
+      backgroundImage: `url('${src}')`,
       opacity: this.state.imageLoaded ? 1 : 0
     }
 

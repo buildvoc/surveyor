@@ -30,7 +30,7 @@ collections:
   - uuid: 827e583c-2736-4720-8695-b76f4622ebc7
     title: Buildings
     url: https://buildingshistory.co.uk/galleries/buildings
-    include: true
+    include: false
 
   - uuid: 985e3f6d-09f1-4a0f-8cbf-060514ecb860
     title: Heritage Trail Farnham
@@ -40,7 +40,7 @@ collections:
   - uuid: eabce27f-9e77-4572-82a9-d5275b17f3f6
     title: Outdoors
     url: https://buildingshistory.co.uk/galleries/outdoors
-    include: true
+    include: false
 
 animals:
   - uuid: 510d47da-9f1f-a3d9-e040-e00a18064a99

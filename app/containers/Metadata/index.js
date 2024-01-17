@@ -60,9 +60,9 @@ export class Metadata extends React.Component {
     }
 
     if (itemData.date) {
-      const dateOptions = { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+      const dateOptions = { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' }
       metadata.push(
-        <Field><img title='Date' alt='Date or year of this item' src={iconDate} /> <small>{new Date(itemData.date).toLocaleDateString("en-US", dateOptions)}</small></Field>
+        <Field><img title='Date' alt='Date or year of this item' src={iconDate} /> <small>{new Date(itemData.date).toLocaleDateString('en-US', dateOptions)}</small></Field>
       )
     }
 

@@ -8,7 +8,8 @@ require('leaflet-geotag-photo')
 import { createSelector } from 'reselect'
 
 import {
-  selectMapDefaults
+  selectMapDefaults,
+  selectItem
 } from 'containers/App/selectors'
 
 import { StyledContainer, StyledMap } from './styles'
@@ -86,7 +87,7 @@ export class Map extends React.Component {
     focusDiv.className = 'map-focus'
     node.appendChild(focusDiv)
 
-    const center = (this.props.data && this.props.data.center) || this.props.defaults.center
+    const center = (this.props.item.data && [parseFloat(this.props.item.data.exif_data_latitude), parseFloat(this.props.item.data.exif_data_longitude)]) || this.props.defaults.center
     const zoom = (this.props.data && this.props.data.zoom) || this.props.defaults.zoom
 
     const map = L.map(node, {
@@ -184,7 +185,8 @@ function mapDispatchToProps (dispatch) {
 
 export default connect(createSelector(
   selectMapDefaults(),
-  (defaults) => ({
-    defaults
+  selectItem(),
+  (defaults, item) => ({
+    defaults, item
   })
 ), mapDispatchToProps, null, { withRef: true })(Map)

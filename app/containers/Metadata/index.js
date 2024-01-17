@@ -45,21 +45,24 @@ export class Metadata extends React.Component {
       </Title>,
       <Field>
         View in high resolution
-        in <a target='_blank' href={`http://digitalcollections.nypl.org/items/${this.props.item.id}`}>
-          Digital Collections
+        in <a target='_blank' href={`https://buildingshistory.co.uk/images/${this.props.item.id}`}>
+          Buildings History
         </a>
       </Field>
     ]
 
     if (itemData.location) {
       metadata.push(
-        <Field><img title='Location' alt='Location of this item' src={iconLocation} /> {itemData.location}</Field>
+        <Field>
+          <img title='Location' alt='Location of this item' src={iconLocation} /> <small>{itemData.long_description}</small>
+        </Field>
       )
     }
 
     if (itemData.date) {
+      const dateOptions = { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' };
       metadata.push(
-        <Field><img title='Date' alt='Date or year of this item' src={iconDate} /> {itemData.date}</Field>
+        <Field><img title='Date' alt='Date or year of this item' src={iconDate} /> <small>{new Date(itemData.date).toLocaleDateString("en-US", dateOptions)}</small></Field>
       )
     }
 

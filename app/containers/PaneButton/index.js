@@ -30,7 +30,7 @@ export class PaneButton extends React.Component {
         src = urls[0].url.replace(/t=\w/, 't=t')
 
         buttonStyle = {
-          backgroundImage: `url(${src})`,
+          backgroundImage: `url('${src}')`,
           left: 0
         }
       }

@@ -74,6 +74,7 @@ export class Menu extends React.Component {
     const hideFirst = 3
     menuItems = [
       <StyledLink to={this.props.homepageLink}>Start Surveying!</StyledLink>,
+      <StyledLink href='http://surveyor-map.buildingshistory.co.uk/' target='_blank'>Surveyor Map</StyledLink>,
       <StyledLink to='/help'>Help</StyledLink>,
       <StyledLink to='/about'>About</StyledLink>,
       ...menuItems
@@ -98,6 +99,7 @@ export class Menu extends React.Component {
             onClick={this.props.splitPaneClick}><img alt='Switch to split pane mode' src={iconTwoPanes} /></StyledButton>
           <StyledButton selected={surveying && this.props.paneMode === 'single'} title='Single pane'
             onClick={this.props.singlePaneClick}><img alt='Switch to single pane mode' src={iconSinglePane} /></StyledButton>
+          <StyledLink href='http://surveyor-map.buildingshistory.co.uk/' target='_blank'>Surveyor Map</StyledLink>
           <StyledLink selected={helpSelected} to='/help'>Help</StyledLink>
           <StyledLink selected={aboutSelected} to='/about'>About</StyledLink>
         </Nav>

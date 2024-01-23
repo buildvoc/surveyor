@@ -87,7 +87,7 @@ export class Map extends React.Component {
     focusDiv.className = 'map-focus'
     node.appendChild(focusDiv)
 
-    const center = (this.props.item.data && [parseFloat(this.props.item.data.exif_data_latitude), parseFloat(this.props.item.data.exif_data_longitude)]) || this.props.defaults.center
+    const center = (this.props.data && this.props.data.center) || this.props.defaults.center
     const zoom = (this.props.data && this.props.data.zoom) || this.props.defaults.zoom
 
     const map = L.map(node, {
@@ -157,6 +157,12 @@ export class Map extends React.Component {
     }
 
     this.map = map
+
+    if (this.props.mode === 'crosshair') {
+      setTimeout(() => {
+        map.panTo(new L.LatLng(parseFloat(this.props.item.data.exif_data_latitude), parseFloat(this.props.item.data.exif_data_longitude)))
+      }, 1000)
+    }
 
     // Every 500ms, check the size of the Leaflet container,
     // and invalidate if necessary

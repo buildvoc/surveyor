@@ -82,7 +82,7 @@ tasks:
 
 steps:
   - location
-  - bearingintroduction
+  # - bearingintroduction
   - bearing
   - thanks
 

@@ -158,11 +158,17 @@ export class Map extends React.Component {
 
     this.map = map
 
-    if (this.props.mode === 'crosshair') {
+    if (this.props.mode === 'camera') {
       setTimeout(() => {
-        map.panTo(new L.LatLng(parseFloat(this.props.item.data.exif_data_latitude), parseFloat(this.props.item.data.exif_data_longitude)))
+        this.camera.setTargetLatLng(
+          [parseFloat(this.props.item.data.exif_data_latitude), parseFloat(this.props.item.data.exif_data_longitude)],
+        )
       }, 1000)
     }
+
+    setTimeout(() => {
+      map.panTo(new L.LatLng(parseFloat(this.props.item.data.exif_data_latitude), parseFloat(this.props.item.data.exif_data_longitude)))
+    }, 2000)
 
     // Every 500ms, check the size of the Leaflet container,
     // and invalidate if necessary

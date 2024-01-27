@@ -12,7 +12,12 @@ import Flex from 'components/Flex'
 import { Container, BottomButtons, Buttons, MapContainer } from '../styles'
 
 import {
-  selectStepData
+  loadItem
+} from 'containers/App/actions'
+
+import {
+  selectMapDefaults,
+  selectItem
 } from 'containers/App/selectors'
 
 export class Step extends React.Component {
@@ -24,11 +29,8 @@ export class Step extends React.Component {
       initializedMap: false,
       hasMoved: false || this.props.savedStepData,
       initialData: {
-        zoom: props.locationStepData.data.zoom,
-        center: [
-          props.locationStepData.data.geometry.coordinates[1],
-          props.locationStepData.data.geometry.coordinates[0]
-        ],
+        zoom: props.defaults.zoom,
+        center: props.defaults.center,
         fieldOfView: {
           type: 'Feature',
           properties: {
@@ -37,8 +39,8 @@ export class Step extends React.Component {
           geometry: {
             type: 'LineString',
             coordinates: [
-              props.locationStepData.data.geometry.coordinates,
-              props.locationStepData.data.geometry.coordinates
+              props.defaults.center,
+              props.defaults.center
             ]
           }
         }
@@ -181,9 +183,17 @@ export class Step extends React.Component {
   }
 }
 
+function mapDispatchToProps (dispatch) {
+  return {
+    loadItem: () => dispatch(loadItem()),
+    dispatch
+  }
+}
+
 export default connect(createSelector(
-  selectStepData('location'),
-  (locationStepData) => ({
-    locationStepData
+  selectMapDefaults(),
+  selectItem(),
+  (defaults, item) => ({
+    defaults, item
   })
-))(Step)
+), mapDispatchToProps)(Step)

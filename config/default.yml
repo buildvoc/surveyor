@@ -81,7 +81,7 @@ tasks:
   taskId: geotag-photo
 
 steps:
-  - location
+  # - location
   # - bearingintroduction
   - bearing
   - thanks

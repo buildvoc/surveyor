@@ -20,6 +20,7 @@ import { Container, Hamburger, Nav, StyledButton, StyledLink, StyledA, DropDownI
 import iconSinglePane from 'images/icon-single-pane.svg'
 import iconTwoPanes from 'images/icon-split-panes.svg'
 import iconHamburger from 'images/icon-hamburger.svg'
+import request from '../../utils/request'
 
 export class Menu extends React.Component {
 
@@ -27,7 +28,8 @@ export class Menu extends React.Component {
     super(props)
     this.state = {
       showDropdown: false,
-      shiftKey: false
+      shiftKey: false,
+      syncLabel: 'Sync'
     }
   }
 
@@ -75,6 +77,7 @@ export class Menu extends React.Component {
     menuItems = [
       <StyledLink to={this.props.homepageLink}>Start Surveying!</StyledLink>,
       <StyledLink href='http://surveyor-map.buildingshistory.co.uk/' target='_blank'>Surveyor Map</StyledLink>,
+      <StyledLink to='#' onClick={() => this.sync()}>{this.state.syncLabel}</StyledLink>,
       <StyledLink to='/help'>Help</StyledLink>,
       <StyledLink to='/about'>About</StyledLink>,
       ...menuItems
@@ -100,6 +103,7 @@ export class Menu extends React.Component {
           <StyledButton selected={surveying && this.props.paneMode === 'single'} title='Single pane'
             onClick={this.props.singlePaneClick}><img alt='Switch to single pane mode' src={iconSinglePane} /></StyledButton>
           <StyledLink href='https://surveyor-map.buildingshistory.co.uk/' target='_blank'>Surveyor Map</StyledLink>
+          <StyledLink to='#' onClick={() => this.sync()}>{this.state.syncLabel}</StyledLink>
           <StyledLink selected={helpSelected} to='/help'>Help</StyledLink>
           <StyledLink selected={aboutSelected} to='/about'>About</StyledLink>
         </Nav>
@@ -118,6 +122,19 @@ export class Menu extends React.Component {
     this.setState({
       showDropdown: !this.state.showDropdown,
       shiftKey
+    })
+  }
+
+  sync () {
+    this.setState({
+      syncLabel: 'Syncing...'
+    })
+
+    request('https://api.buildingshistory.co.uk/api/v1/galleries/sync', { method: 'get' })
+    request('https://api.buildingshistory.co.uk/api/v1/images/sync', { method: 'get' })
+
+    this.setState({
+      syncLabel: 'Sync'
     })
   }
 }

@@ -27,20 +27,20 @@ cssVariables:
   headerColor: white
 
 collections:
-  - uuid: 827e583c-2736-4720-8695-b76f4622ebc7
-    title: Buildings
-    url: https://buildingshistory.co.uk/galleries/buildings
-    include: false
+  - uuid: 9caddcc7-1d78-4206-bff7-c355c7fd5d37
+    title: New Homes
+    url: https://buildingshistory.co.uk/galleries/new-homes
+    include: true
 
-  - uuid: 985e3f6d-09f1-4a0f-8cbf-060514ecb860
+  - uuid: 76033bb6-a3e0-4be4-98d9-50f57b9a59f9
     title: Heritage Trail Farnham
     url: https://buildingshistory.co.uk/galleries/heritage-trail-farnham
     include: true
 
-  - uuid: eabce27f-9e77-4572-82a9-d5275b17f3f6
-    title: Outdoors
-    url: https://buildingshistory.co.uk/galleries/outdoors
-    include: false
+  # - uuid: eabce27f-9e77-4572-82a9-d5275b17f3f6
+  #   title: Outdoors
+  #   url: https://buildingshistory.co.uk/galleries/outdoors
+  #   include: false
 
 animals:
   - uuid: 510d47da-9f1f-a3d9-e040-e00a18064a99

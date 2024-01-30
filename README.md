@@ -130,3 +130,17 @@ To start Surveyor, run:
 To build Surveyor, run:
 
     npm run build
+
+## Sync
+
+Step by step to sync brick-by-brick database with Mappics or [api.buildingshistory.co.uk] (https://api.buildingshistory.co.uk). Mappics Galleries as Brick Collections and Mappics Images as Brick items.
+
+    1. Create gallery and image on Mappics dashboard
+    2. Visit Surveyor and click Sync menu button
+
+Sync button only works for syncing Mappics Images to Brick items. 
+
+Syncing Mappics Galleries to Brick Collections:
+    1. Generate response from [this] (https://api.buildingshistory.co.uk/api/documentation#/Gallery/39f8843d235319bd1261129c23f93c50)
+    2. Copy that response to Surveyor config/default.yml or production.yml at collections part.
+    3. Build surveyor, npm run build

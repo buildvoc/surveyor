@@ -37,9 +37,9 @@ collections:
     url: https://buildingshistory.co.uk/galleries/heritage-trail-farnham
     include: true
 
-  - uuid: c76c1db0-d372-4a13-84f1-d2fe9d12a9f9,
-    title: Buildings,
-    url: https://buildingshistory.co.uk/galleries/buildings,
+  - uuid: c76c1db0-d372-4a13-84f1-d2fe9d12a9f9
+    title: Buildings
+    url: https://buildingshistory.co.uk/galleries/buildings
     include: true
 
 

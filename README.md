@@ -133,7 +133,7 @@ To build Surveyor, run:
 
 ## Sync
 
-Step by step to sync brick-by-brick database with Mappics or [api.buildingshistory.co.uk] (https://api.buildingshistory.co.uk). Mappics Galleries as Brick Collections and Mappics Images as Brick items.
+Step by step to sync brick-by-brick database with Mappics or [api.buildingshistory.co.uk] ([https://api.buildingshistory.co.uk](https://api.buildingshistory.co.uk/api/documentation#/Gallery/4ed4f024f5b0f0eb9a3a8122312dbf0f). Mappics Galleries as Brick Collections and Mappics Images as Brick items.
 
     1. Create gallery and image on Mappics dashboard
     2. Visit Surveyor and click Sync menu button

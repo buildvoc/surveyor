@@ -46,7 +46,7 @@ export class Metadata extends React.Component {
       <Field>
         View in high resolution
         in <a target='_blank' href={`https://buildingshistory.co.uk/images/${this.props.item.id}`}>
-          Buildings History
+        Pic2BIM
         </a>
       </Field>
     ]

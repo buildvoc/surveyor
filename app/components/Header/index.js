@@ -10,14 +10,14 @@ export default function Header (props) {
     <StyledHeader className='align-center'>
       <div className='align-center'>
         <Logo style={{backgroundImage: `url(${nypl})`}} href='//nypl.org' target='_blank'>
-          <span>The New York Public Library</span>
+          <span>Connecting photos to Building Information</span>
         </Logo>
         <Subtitles>
           <div>
-            <a href='http://nypl.org/' target='_blank'>The New York Public Library</a>
+            <a href='http://nypl.org/' target='_blank'>Pic2BIM</a>
           </div>
           <div>
-            <a href='http://spacetime.nypl.org/' target='_blank'>NYC Space/Time Directory</a>
+            <a href='http://spacetime.nypl.org/' target='_blank'>Connecting photos to Building Information</a>
           </div>
         </Subtitles>
         <h1>
